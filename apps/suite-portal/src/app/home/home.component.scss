@@ -1,0 +1,28 @@
+:host {
+  display: block;
+
+  main {
+    padding: var(--sp-margin-size);
+  }
+
+
+  form.maint-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  mat-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    mat-label {
+      margin-right: 16px;
+    }
+    .spacer {
+      flex-grow: 100;
+    }
+    a.admin {
+      justify-self: end;
+    }
+  }
+}

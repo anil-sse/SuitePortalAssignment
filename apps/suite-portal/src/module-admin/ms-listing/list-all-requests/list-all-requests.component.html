@@ -1,0 +1,89 @@
+<mat-tab-group>
+  <mat-tab label="Open Requests">
+    <mat-table [dataSource]="openRequests" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="unitNumber">
+        <mat-header-cell *matHeaderCellDef> Unit Number </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.unitNumber}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="serviceType">
+        <mat-header-cell *matHeaderCellDef> Service Type </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.serviceType}} </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="summary">
+        <mat-header-cell *matHeaderCellDef> Summary </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.summary}} </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="submittedAt">
+        <mat-header-cell *matHeaderCellDef> Submitted On </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.submittedAt | date: 'medium'}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-button color="warn" (click)="closeRequest(element)">Close</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="colOpenRequests"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: colOpenRequests;"></mat-row>
+
+    </mat-table>
+  </mat-tab>
+
+  <mat-tab label="Closed Requests">
+      <mat-table [dataSource]="closedRequests" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="unitNumber">
+          <mat-header-cell *matHeaderCellDef> Unit Number </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.unitNumber}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="serviceType">
+          <mat-header-cell *matHeaderCellDef> Service Type </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.serviceType}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="summary">
+          <mat-header-cell *matHeaderCellDef> Summary </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.summary}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="submittedAt">
+          <mat-header-cell *matHeaderCellDef> Submitted On </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.submittedAt}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="closedAt">
+          <mat-header-cell *matHeaderCellDef> Closed On </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.closedAt | date: 'medium'}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="colClosedRequests"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: colClosedRequests;"></mat-row>
+
+      </mat-table>
+  </mat-tab>
+
+</mat-tab-group>
+
+
+

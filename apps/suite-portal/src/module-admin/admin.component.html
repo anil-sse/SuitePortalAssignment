@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Admin Portal</span>
+  <span class="spacer"></span>
+  <div>
+  <span>Welcome {{authService.loggedInUser}}</span>
+  <button class="border" mat-button (click)="logout()">Logout</button>
+  </div>
+</mat-toolbar>
+<main>
+  <router-outlet></router-outlet>
+</main>

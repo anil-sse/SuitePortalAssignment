@@ -1,0 +1,61 @@
+<mat-toolbar color="primary">
+  <mat-label>Resident Portal</mat-label>
+  <a mat-button [routerLink]="'home'">Home</a>
+  <div class="spacer"></div>
+  <a class="admin" mat-button [routerLink]="'/login'">Admin</a>
+</mat-toolbar>
+<main>
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Maintenance Request Form
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form class="maint-form" [formGroup]="form">
+          <mat-form-field>
+            <mat-label>Apartment Unit #</mat-label>
+            <input matInput type="text" formControlName="unitNumber"/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Requester Name</mat-label>
+            <input matInput type="text" formControlName="name" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Requester Email</mat-label>
+            <input matInput type="email" formControlName="email"/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Service Type</mat-label>
+            <mat-select formControlName="serviceType">
+              <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType">
+                {{serviceType}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Summary</mat-label>
+            <input matInput type="text" formControlName="summary" maxlength="250"/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Details</mat-label>
+            <textarea matInput formControlName="details" maxlength="400"></textarea>
+          </mat-form-field>
+
+          <button mat-raised-button color="accent" [disabled]="!form.valid"  (click)="submit()">
+            Submit
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+</main>

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title class="text-purple border-bottom">
+  <i class="mdi mdi-check-underline-circle-outline"></i> Confirmation</h1>
+<div mat-dialog-content [innerHTML]="data.message" style="min-height: 5rem"></div>
+
+
+<div mat-dialog-actions>
+    <!-- @buttons Yes | No  | Cancel -->
+    <div class="text-end w-100 d-flex justify-content-between">
+      <button class="btn btn-sm btn-soft-secondary btn-rounded waves-effect" mat-dialog-close="{{dialogButtonText.CANCEL}}">{{dialogButtonText.CANCEL}}</button>
+      <button class="btn btn-sm btn-soft-purple btn-rounded waves-effect" mat-dialog-close="{{dialogButtonText.CONFIRM}}">{{dialogButtonText.CONFIRM}}</button>
+    </div>
+</div>

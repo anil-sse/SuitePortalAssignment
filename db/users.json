@@ -1,0 +1,7 @@
+{
+  "admin": [
+    {"username":  "admin", "password": "password", "isActive":  true, "uuid": "3e13ad44"
+    },
+    {"username":  "developer", "password": "password", "isActive":  true, "uuid":  "2078a891"}
+  ]
+}

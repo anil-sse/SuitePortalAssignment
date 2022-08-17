@@ -1,0 +1,34 @@
+<div class="col d-flex justify-content-center p-5">
+<mat-card class="w-25">
+  <mat-card-header>
+    <mat-card-title class="m-0 border-bottom">Login</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="p-3 m-0">
+    <form [formGroup]="loginForm" class="login-form">
+
+      <mat-form-field class="w-100">
+        <mat-label>Username*</mat-label>
+        <input matInput placeholder="Enter username" formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Password*</mat-label>
+        <input type="password" matInput placeholder="Enter password" formControlName="password">
+      </mat-form-field>
+
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions class="d-md-flex justify-content-md-between">
+    <button mat-button routerLink="/home">Resident Portal</button>
+
+    <button (click)="submit()" [disabled]="loginForm.invalid" class="shadow" mat-button color="primary">Login</button>
+
+  </mat-card-actions>
+
+</mat-card>
+
+
+</div>
